@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayurveda Mentor</title>
+
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #3b8a42;
+            padding: 10px 0;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style-type: none;
+        }
+
+        .nav-links li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Content Section */
+        .content h2 {
+            text-align: center;
+            margin: 20px;
+            font-size: 35px;
+            color: #3b8a42;
+        }
+
+        /* Services Boxes */
+        .box-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 boxes per row */
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .box img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .box h3 {
+            font-size: 24px;
+            color: #3b8a42;
+            margin: 15px 0;
+        }
+
+        .box p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .box a {
+            text-decoration: none;
+            color: white;
+            background-color: #3b8a42;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        .box a:hover {
+            background-color: #2e6b32;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #3b8a42;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+    </style>
+
+    <script>
+        // Function to handle search and redirection
+        function searchProduct() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            
+            // Check for specific products and redirect to respective pages
+            if (query.includes('herbal tea')) {
+                window.location.href = 'products.html#herbal-tea';
+            } else if (query.includes('chyawanprash')) {
+                window.location.href = 'products.html#chyawanprash';
+            } else if (query.includes('ayurvedic oil')) {
+                window.location.href = 'products.html#ayurvedic-oil';
+            } else if (query.includes('ashwagandha')) {
+                window.location.href = 'products.html#ashwagandha';
+            } else if (query.includes('honey')) {
+                window.location.href = 'products.html#honey';
+            } else {
+                alert('Product not found. Please check the spelling or try a different product.');
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Ayurveda Mentor</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Content -->
+    <section class="content">
+        <h2>Way to explore better health...</h2>
+        
+        <!-- Search Bar -->
+        <div class="search-bar" style="text-align: center; margin: 20px;">
+            <input type="text" id="search-input" placeholder="Search for products..." style="padding: 10px; width: 300px;">
+            <button onclick="searchProduct()" style="padding: 10px 20px; background-color: #3b8a42; color: white; border: none; cursor: pointer;">Search</button>
+        </div>
+
+        <div class="box-container">
+            <!-- Box 1 -->
+            <div class="box">
+                <img src="./Img/Health tips.jpeg" alt="Health Tips">
+                <h3>Health Tips</h3>
+                <p>Explore daily health tips based on Ayurveda to enhance your well-being.</p>
+                <a href="health-tips.html">Learn More</a>
+            </div>
+
+            <!-- Box 2 -->
+            <div class="box">
+                <img src="./Img/Ayurvedic Products.jpg" alt="Ayurvedic Products">
+                <h3>Ayurvedic Products</h3>
+                <p>Discover natural Ayurvedic products that rejuvenate your body and mind.</p>
+                <a href="products.html">Explore Products</a>
+            </div>
+
+            <!-- Box 3 -->
+            <div class="box">
+                <img src="./Img/Ayurvedic Consultation.jpeg" alt="Ayurvedic Consultation">
+                <h3>Ayurvedic Consultation</h3>
+                <p>Get expert consultation for personalized Ayurvedic treatment and advice.</p>
+                <a href="consultation.html">Book Consultation</a>
+            </div>
+
+            <!-- Box 4 -->
+            <div class="box">
+                <img src="./Img/Herbal Medicine.webp" alt="Herbal Medicine">
+                <h3>Herbal Medicine</h3>
+                <p>Order herbal medicines curated with the wisdom of Ayurveda for various ailments.</p>
+                <a href="medicine-order.html">Order Medicine</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Ayurveda Mentor. All rights reserved.</p>
+    </footer>
+</body>
+</html>

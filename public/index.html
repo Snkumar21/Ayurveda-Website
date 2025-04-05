@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayurveda Mentor</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #3b8a42;
+            padding: 10px 0;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style-type: none;
+        }
+
+        .nav-links li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('./Img/desktop-wallpaper-unifarma-global-consumer-healthcare-ayurveda.jpg') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #012c06;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .search-bar {
+            display: flex;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            width: 300px;
+        }
+
+        .search-bar button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #3b8a42;
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #2e6b32;
+        }
+
+        /* Products Section */
+        #products {
+            padding: 50px;
+            background-color: #fff;
+        }
+
+        #products h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .product-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .product-card button {
+            padding: 10px 15px;
+            background-color: #3b8a42;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .product-card button:hover {
+            background-color: #2e6b32;
+        }
+
+        .like-btn {
+            margin-top: 10px;
+            cursor: pointer;
+            color: #555;
+        }
+
+        .like-btn:hover {
+            color: #e74c3c;
+        }
+
+        /* Explore Link Styling */
+        .explore-link {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .explore {
+            text-decoration: none;
+            background-color: #3b8a42;
+            padding: 10px 30px;
+            color: #fff;
+            border-radius: 10px;
+            display: inline-block;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .explore:hover {
+            background-color: #2e6b32;
+        }
+
+        /* About Section */
+        #about {
+            padding: 50px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        #about h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 50px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        #contact p {
+            font-size: 18px;
+        }
+
+        #contact ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #contact ul li {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #3b8a42;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Ayurveda Mentor</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Search Bar -->
+    <section id="home">
+        <div class="hero">
+            <h2>Welcome to Ayurveda Mentor</h2>
+            <p>Your trusted guide to Ayurvedic knowledge and wellness.</p>
+            <div class="search-bar">
+                <input type="text" id="search-query" placeholder="Search Ayurvedic remedies or products..." />
+                <button onclick="searchServices()">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <h2>Our Ayurvedic Products</h2>
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="./Img/Hair Oil.jpeg" alt="Product 1">
+                <h3>Ayurvedic Oil</h3>
+                <p>Helps with joint pain and inflammation.</p>
+                <button>Add to Cart</button>
+                <div class="like-btn">❤️ Like</div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="./Img/Herbal Tea.jpg" alt="Product 2">
+                <h3>Herbal Tea</h3>
+                <p>Boosts immunity and digestion.</p>
+                <button>Add to Cart</button>
+                <div class="like-btn">❤️ Like</div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="./Img/Chyawanprash.webp" alt="Product 3">
+                <h3>Chyawanprash</h3>
+                <p>Rich in antioxidants and vitamins.</p>
+                <button>Add to Cart</button>
+                <div class="like-btn">❤️ Like</div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="./Img/Ashwagandha.jpg" alt="Product 4">
+                <h3>Ashwagandha</h3>
+                <p>Reduces stress and boosts energy.</p>
+                <button>Add to Cart</button>
+                <div class="like-btn">❤️ Like</div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="./Img/Honey.png" alt="Product 5">
+                <h3>Honey</h3>
+                <p>Natural reduces stress and boosts energy.</p>
+                <button>Add to Cart</button>
+                <div class="like-btn">❤️ Like</div>
+            </div>
+        </div>
+        <div class="explore-link">
+            <a href="services.html" class="explore">Explore</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Ayurveda Mentor</h2>
+        <p>
+            Ayurveda Mentor is your go-to platform for holistic wellness. 
+            With our deep knowledge of Ayurvedic practices, we help you 
+            live a healthier and balanced life. Discover ancient remedies 
+            and order medicines that bring harmony to your body, mind, and spirit.
+        </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any queries, feel free to reach out to us:</p>
+        <ul>
+            <li>Email: contact@ayurvedamentor.com</li>
+            <li>Phone: +123 456 7890</li>
+            <li>Address: 123 Ayurvedic Way, Wellness City</li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Ayurveda Mentor. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function searchServices() {
+            // Get the search query entered by the user
+            const query = document.getElementById('search-query').value.toLowerCase();
+        
+            // Mapping of search terms to specific sections on the category pages
+            const productMapping = {
+                'herbal tea': 'products.html#herbal-tea',
+                'ayurvedic oil': 'products.html#ayurvedic-oil',
+                'natural soap': 'products.html#natural-soap',
+                // Add more products and sections as needed
+            };
+        
+            // Check if the search query matches any product
+            if (productMapping[query]) {
+                // If a match is found, redirect to the specific section of the category page
+                window.location.href = productMapping[query];
+            } else {
+                // Otherwise, redirect to the services page with the search query
+                window.location.href = `services.html?search=${encodeURIComponent(query)}`;
+            }
+        
+            // Clear the search input field after the redirection
+            document.getElementById('search-query').value = '';
+        }
+    </script>
+
+</body>
+</html>

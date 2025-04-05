@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayurveda Mentor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-image: url("Img/360_F_242027349_P2eKu6v7izNR4iInAcieWmOAce7EIHOY.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #3b8a42;
+            padding: 10px 0;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style-type: none;
+        }
+
+        .nav-links li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Login Section */
+        .log {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #eeeded;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 400px;
+            width: 100%;
+            margin: 5% auto;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .input-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-container input {
+            width: 100%;
+            padding: 10px 40px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .input-container input:focus {
+            border-color: #3b8a42;
+            outline: none;
+        }
+
+        .input-container i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #333;
+        }
+
+        .remember-forgot-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .remember-forgot-container a {
+            text-decoration: none;
+            color: #33fc25;
+            font-size: 14px;
+        }
+
+        .remember-forgot-container a:hover {
+            text-decoration: underline;
+        }
+
+        .login-submit {
+            background-color: #04cc14;
+            color: #111;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .login-submit:hover {
+            background-color: #17e108;
+        }
+
+        h2 {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #ddd;
+        }
+
+        h2 a {
+            color: #33fc25;
+            text-decoration: none;
+        }
+
+        h2 a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #3b8a42;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Ayurveda Mentor</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="log">
+        <div class="content">
+            <h1>Login</h1>
+            <br><br>
+            <form action="/loginform" class="loginform" id="loginform" method="post">
+                <div class="input-container">
+                    <input type="text" name="username" id="username" placeholder="Username" required>
+                    <i class="fas fa-user"></i>
+                </div>
+                <br>
+                <div class="input-container">
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+                <br>
+                <div class="remember-forgot-container">
+                    <input type="checkbox" name="remember" id="remember">
+                    <label for="remember" style="margin-left: -30%;">Remember Me</label>
+                    <a href="#" class="forgot">Forgot Password?</a>
+                </div>
+                <br>
+                <button type="submit" class="login-submit">Login</button>
+                <br>
+                <h2>Don't have an account? <a href="register.html">Register</a></h2>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Ayurveda Mentor. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("loginform");
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+    
+            // Make a POST request to your server
+            fetch("/loginform", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ username, password }),
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.success) {
+                alert("Login Successfully");
+                window.location.href = "/index";
+                } else {
+                alert("Error: " + data.message);
+                }
+            })
+            .catch((error) => console.error("Error:", error));
+        });
+        });
+    </script>
+</body>
+</html>

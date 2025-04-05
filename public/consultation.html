@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayurveda Mentor - Ayurvedic Consultation</title>
+
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #3b8a42;
+            padding: 10px 0;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style-type: none;
+        }
+
+        .nav-links li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Consultation Section */
+        #consultation {
+            padding: 50px;
+            background-color: #fff;
+        }
+
+        #consultation h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #3b8a42;
+        }
+
+        .consultation-info {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .consultation-info p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Booking Form */
+        .booking-form {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .booking-form h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #3b8a42;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, 
+        .form-group textarea, 
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            height: 100px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3b8a42;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-group button:hover {
+            background-color: #2e6b32;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #3b8a42;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Ayurveda Mentor</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Consultation Section -->
+    <section id="consultation">
+        <h2>Ayurvedic Consultation</h2>
+        <div class="consultation-info">
+            <p>Discover the ancient wisdom of Ayurveda through our personalized consultation services. Our certified Ayurvedic practitioners provide holistic wellness solutions tailored to your body type, lifestyle, and health concerns. We offer guidance on natural remedies, diet, and lifestyle adjustments to improve your physical, mental, and emotional health.</p>
+        </div>
+
+        <!-- Booking Form -->
+        <div class="booking-form">
+            <h3>Book an Ayurvedic Consultation</h3>
+            <form id="consultation-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="consultation-type">Consultation Type</label>
+                    <select id="consultation-type" name="consultation_type">
+                        <option value="general">General Health Consultation</option>
+                        <option value="diet">Diet & Lifestyle Consultation</option>
+                        <option value="stress-management">Stress Management Consultation</option>
+                    </select>
+                </div>
+            
+                <div class="form-group">
+                    <label for="message">Additional Information (optional)</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+            
+                <div class="form-group">
+                    <button type="submit">Book Consultation</button>
+                </div>
+            </form>            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Ayurveda Mentor. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Handle form submission
+        document.getElementById('consultation-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Fetch the form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const consultation_type = document.getElementById('consultation-type').value;
+            const message = document.getElementById('message').value;
+
+            // Create the request body
+            const requestBody = {
+                name,
+                email,
+                phone,
+                consultation_type,
+                message
+            };
+
+            // Send the data to the server using fetch API
+            fetch('/submit-consultation', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestBody)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message) {
+                    alert(data.message);
+                    // Optionally, clear the form here if submission is successful
+                    document.getElementById('consultation-form').reset();
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>        
+</body>
+</html>

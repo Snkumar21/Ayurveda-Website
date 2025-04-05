@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayurveda Mentor - Health Tips</title>
+
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #3b8a42;
+            padding: 10px 0;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style-type: none;
+        }
+
+        .nav-links li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Health Tips Section */
+        .health-tips-section {
+            padding: 50px;
+            background-color: #fff;
+        }
+
+        .health-tips-section h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #3b8a42;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tip-card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .tip-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .tip-card h3 {
+            font-size: 20px;
+            color: #3b8a42;
+            margin-bottom: 10px;
+        }
+
+        .tip-card p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #3b8a42;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Ayurveda Mentor</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Health Tips Section -->
+    <section class="health-tips-section">
+        <h2>Daily Ayurvedic Health Tips</h2>
+        <div class="tips-grid">
+            <!-- Tip 1 -->
+            <div class="tip-card">
+                <img src="img/wake-up.jpg" alt="Wake up Early">
+                <h3>Wake Up Early</h3>
+                <p>Start your day early to align with the natural rhythm of the body for improved mental clarity.</p>
+            </div>
+
+            <!-- Tip 2 -->
+            <div class="tip-card">
+                <img src="img/warm-water.jpg" alt="Drink Warm Water">
+                <h3>Drink Warm Water</h3>
+                <p>Drinking warm water in the morning aids digestion and detoxifies the body.</p>
+            </div>
+
+            <!-- Tip 3 -->
+            <div class="tip-card">
+                <img src="img/oil-pulling.jpg" alt="Oil Pulling">
+                <h3>Practice Oil Pulling</h3>
+                <p>Oil pulling with coconut or sesame oil helps improve oral health and detoxifies the body.</p>
+            </div>
+
+            <!-- Tip 4 -->
+            <div class="tip-card">
+                <img src="img/meditation.jpg" alt="Meditate Daily">
+                <h3>Meditate Daily</h3>
+                <p>Daily meditation calms the mind, reduces stress, and enhances emotional stability.</p>
+            </div>
+
+            <!-- Tip 5 -->
+            <div class="tip-card">
+                <img src="img/herbal-tea.jpg" alt="Drink Herbal Tea">
+                <h3>Drink Herbal Tea</h3>
+                <p>Herbal teas like ginger or tulsi tea boost immunity and improve digestion.</p>
+            </div>
+
+            <!-- Tip 6 -->
+            <div class="tip-card">
+                <img src="img/sleep.jpg" alt="Get Enough Sleep">
+                <h3>Get Enough Sleep</h3>
+                <p>Aim for 7-8 hours of sleep to rejuvenate the body and mind.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Ayurveda Mentor. All rights reserved.</p>
+    </footer>
+</body>
+</html>

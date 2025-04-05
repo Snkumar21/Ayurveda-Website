@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayurveda Mentor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-image: url("Img/360_F_242027349_P2eKu6v7izNR4iInAcieWmOAce7EIHOY.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #3b8a42;
+            padding: 10px 0;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            list-style-type: none;
+        }
+
+        .nav-links li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Registration Section */
+        .log {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .content {
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            color: #fff;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .input-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-container input {
+            width: 100%;
+            padding: 15px;
+            padding-left: 40px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .input-container i {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            color: #999;
+        }
+
+        button.login-submit {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            background-color: #04cc14;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button.login-submit:hover {
+            background-color: transparent;
+            border: 1px solid #04cc14;
+        }
+
+        button.google {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            background-color: #db4437;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button.google:hover {
+            background-color: #c13533;
+        }
+
+        button.google i {
+            margin-right: 8px;
+        }
+
+        h2 {
+            margin: 20px 0;
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #3b8a42;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Ayurveda Mentor</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Register Section -->
+    <section class="log">
+        <div class="content">
+            <h1>Register</h1>
+            <br><br>
+            <form id="registerform">
+                <div class="input-container">
+                    <input type="text" name="username" id="username" placeholder="Username" required>
+                    <i class="fas fa-user"></i>
+                </div>
+                <br>
+                <div class="input-container">
+                    <input type="password" name="password" id="new_password" placeholder="New Password" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+                <br>
+                <div class="input-container">
+                    <input type="password" name="password_confirm" id="confirm_password" placeholder="Confirm Password" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+                <br>
+                <button type="submit" class="login-submit">Join Now</button>
+                <br>
+                <h2 style="text-align: center;">OR</h2>
+                <button class="google">
+                    <i class="fab fa-google"></i><span>Google</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Ayurveda Mentor. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("registerform");
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                
+                const username = document.getElementById("username").value;
+                const new_password = document.getElementById("new_password").value;
+                const confirm_password = document.getElementById("confirm_password").value;
+
+                // Check if passwords match before sending to server
+                if (new_password !== confirm_password) {
+                    alert("Passwords do not match!");
+                    return;
+                }
+
+                // POST request to the server
+                fetch("/registerform", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ username, password: new_password }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Sign Up Successfully");
+                        form.reset();  // Clear the form
+                        window.location.href = "/login";
+                    } else {
+                        alert("Error: " + data.message);
+                    }
+                })
+                .catch(error => console.error("Error:", error));
+            });
+        });
+    </script>
+</body>
+</html>

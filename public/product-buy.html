@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Ayurveda Mentor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: #3b8a42;
+        }
+
+        .checkout-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .checkout-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .checkout-item h3 {
+            margin: 0;
+        }
+
+        .checkout-item p {
+            margin: 0;
+            color: #555;
+        }
+
+        .checkout-total {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .checkout-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #3b8a42;
+            color: white;
+            border: none;
+            text-align: center;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .checkout-btn:hover {
+            background-color: #2e6b32;
+        }
+    </style>
+</head>
+<body>
+    <h1>Checkout</h1>
+
+    <div class="checkout-container" id="checkout-container">
+        <!-- Cart items will be inserted here dynamically -->
+    </div>
+
+    <script>
+        // Retrieve cart from localStorage
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const checkoutContainer = document.getElementById('checkout-container');
+
+        let totalPrice = 0;
+
+        // Display each cart item
+        cart.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.classList.add('checkout-item');
+            itemElement.innerHTML = `
+                <h3>${item.name}</h3>
+                <p>$${item.price.toFixed(2)}</p>
+            `;
+            checkoutContainer.appendChild(itemElement);
+            totalPrice += item.price;
+        });
+
+        // Display total price
+        const totalElement = document.createElement('div');
+        totalElement.classList.add('checkout-total');
+        totalElement.textContent = `Total: $${totalPrice.toFixed(2)}`;
+        checkoutContainer.appendChild(totalElement);
+
+        // Add checkout button
+        const checkoutButton = document.createElement('button');
+        checkoutButton.classList.add('checkout-btn');
+        checkoutButton.textContent = 'Proceed to Payment';
+        checkoutButton.onclick = function() {
+            alert('Proceeding to payment...');
+        };
+        checkoutContainer.appendChild(checkoutButton);
+    </script>
+</body>
+</html>

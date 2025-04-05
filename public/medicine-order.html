@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayurveda Mentor - Herbal Medicine</title>
+
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #3b8a42;
+            padding: 10px 0;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style-type: none;
+        }
+
+        .nav-links li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .search-bar button {
+            padding: 10px;
+            background-color: #3b8a42;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 10px;
+            font-size: 16px;
+        }
+
+        .search-bar button:hover {
+            background-color: #2e6b32;
+        }
+
+        /* Herbal Medicine Section */
+        #herbal-medicines {
+            padding: 50px;
+            background-color: #fff;
+        }
+
+        #herbal-medicines h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #3b8a42;
+        }
+
+        .medicine-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .medicine-card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .medicine-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .medicine-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .medicine-card p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .medicine-card .price {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #3b8a42;
+        }
+
+        .medicine-card button {
+            padding: 10px 15px;
+            background-color: #3b8a42;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .medicine-card button:hover {
+            background-color: #2e6b32;
+        }
+
+        .medicine-card .like-btn {
+            margin-top: 10px;
+            cursor: pointer;
+            color: #555;
+        }
+
+        .medicine-card .like-btn:hover {
+            color: #e74c3c;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #3b8a42;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Ayurveda Mentor</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" id="search-query" placeholder="Search Ayurvedic products..." />
+        <button onclick="searchProducts()">Search</button>
+    </div>
+
+    <!-- Herbal Medicine Section -->
+    <section id="herbal-medicines">
+        <h2>Our Herbal Medicines</h2>
+        <div class="medicine-grid">
+            <!-- Medicine 1 -->
+            <div class="medicine-card" id="ashwagandha">
+                <img src="./Img/Ashwagandha.jpg" alt="Ashwagandha">
+                <h3>Ashwagandha</h3>
+                <p>Reduces stress and anxiety while boosting energy levels.</p>
+                <div class="price">$25</div>
+                <button>Add to Cart</button>
+                <div class="like-btn">❤️ Like</div>
+            </div>
+
+            <!-- Medicine 2 -->
+            <div class="medicine-card" id="raw-honey">
+                <img src="./Img/Honey.png" alt="Pure Honey">
+                <h3>Pure Honey</h3>
+                <p>Natural remedy for soothing throat and boosting immunity.</p>
+                <div class="price">$15</div>
+                <button>Add to Cart</button>
+                <div class="like-btn">❤️ Like</div>
+            </div>
+
+            <!-- Medicine 3 -->
+            <div class="medicine-card" id="chyawanprash">
+                <img src="./Img/Chyawanprash.webp" alt="Chyawanprash">
+                <h3>Chyawanprash</h3>
+                <p>Rich in antioxidants to enhance vitality and health.</p>
+                <div class="price">$30</div>
+                <button>Add to Cart</button>
+                <div class="like-btn">❤️ Like</div>
+            </div>
+
+            <!-- Medicine 4 -->
+            <div class="medicine-card" id="herbal-tea">
+                <img src="./Img/Herbal Tea.jpg" alt="Herbal Tea">
+                <h3>Herbal Tea</h3>
+                <p>Boosts immunity and aids in digestion.</p>
+                <div class="price">$10</div>
+                <button>Add to Cart</button>
+                <div class="like-btn">❤️ Like</div>
+            </div>
+
+            <!-- Medicine 5 -->
+            <div class="medicine-card" id="aarogyavardhani-vati">
+                <img src="./Img/Aarogyavardhani Vati (For Liver Patient).png" alt="Aarogyavardhani Vati">
+                <h3>Aarogyavardhani Vati</h3>
+                <p>It boosts power of Liver.</p>
+                <div class="price">$10</div>
+                <button>Add to Cart</button>
+                <div class="like-btn">❤️ Like</div>
+            </div>
+
+            <!-- Medicine 1 -->
+            <div class="medicine-card" id="ashwagandha">
+                <img src="./Img/Ashwagandha.jpg" alt="Ashwagandha">
+                <h3>Ashwagandha</h3>
+                <p>Reduces stress and anxiety while boosting energy levels.</p>
+                <div class="price">$25</div>
+                <button>Add to Cart</button>
+                <div class="like-btn">❤️ Like</div>
+            </div>
+
+            <!-- Medicine 2 -->
+            <div class="medicine-card" id="raw-honey">
+                <img src="./Img/Honey.png" alt="Pure Honey">
+                <h3>Pure Honey</h3>
+                <p>Natural remedy for soothing throat and boosting immunity.</p>
+                <div class="price">$15</div>
+                <button>Add to Cart</button>
+                <div class="like-btn">❤️ Like</div>
+            </div>
+
+            <!-- Medicine 3 -->
+            <div class="medicine-card" id="chyawanprash">
+                <img src="./Img/Chyawanprash.webp" alt="Chyawanprash">
+                <h3>Chyawanprash</h3>
+                <p>Rich in antioxidants to enhance vitality and health.</p>
+                <div class="price">$30</div>
+                <button>Add to Cart</button>
+                <div class="like-btn">❤️ Like</div>
+            </div>
+
+            <!-- Medicine 4 -->
+            <div class="medicine-card" id="herbal-tea">
+                <img src="./Img/Herbal Tea.jpg" alt="Herbal Tea">
+                <h3>Herbal Tea</h3>
+                <p>Boosts immunity and aids in digestion.</p>
+                <div class="price">$10</div>
+                <button>Add to Cart</button>
+                <div class="like-btn">❤️ Like</div>
+            </div>
+
+            <!-- Medicine 5 -->
+            <div class="medicine-card" id="aarogyavardhani-vati">
+                <img src="./Img/Aarogyavardhani Vati (For Liver Patient).png" alt="Aarogyavardhani Vati">
+                <h3>Aarogyavardhani Vati</h3>
+                <p>It boosts power of Liver.</p>
+                <div class="price">$10</div>
+                <button>Add to Cart</button>
+                <div class="like-btn">❤️ Like</div>
+            </div>
+
+            <!-- Medicine 1 -->
+            <div class="medicine-card" id="ashwagandha">
+                <img src="./Img/Ashwagandha.jpg" alt="Ashwagandha">
+                <h3>Ashwagandha</h3>
+                <p>Reduces stress and anxiety while boosting energy levels.</p>
+                <div class="price">$25</div>
+                <button>Add to Cart</button>
+                <div class="like-btn">❤️ Like</div>
+            </div>
+
+            <!-- Medicine 2 -->
+            <div class="medicine-card" id="raw-honey">
+                <img src="./Img/Honey.png" alt="Pure Honey">
+                <h3>Pure Honey</h3>
+                <p>Natural remedy for soothing throat and boosting immunity.</p>
+                <div class="price">$15</div>
+                <button>Add to Cart</button>
+                <div class="like-btn">❤️ Like</div>
+            </div>
+
+            <!-- Medicine 3 -->
+            <div class="medicine-card" id="chyawanprash">
+                <img src="./Img/Chyawanprash.webp" alt="Chyawanprash">
+                <h3>Chyawanprash</h3>
+                <p>Rich in antioxidants to enhance vitality and health.</p>
+                <div class="price">$30</div>
+                <button>Add to Cart</button>
+                <div class="like-btn">❤️ Like</div>
+            </div>
+
+            <!-- Medicine 4 -->
+            <div class="medicine-card" id="herbal-tea">
+                <img src="./Img/Herbal Tea.jpg" alt="Herbal Tea">
+                <h3>Herbal Tea</h3>
+                <p>Boosts immunity and aids in digestion.</p>
+                <div class="price">$10</div>
+                <button>Add to Cart</button>
+                <div class="like-btn">❤️ Like</div>
+            </div>
+
+            <!-- Medicine 5 -->
+            <div class="medicine-card" id="aarogyavardhani-vati">
+                <img src="./Img/Aarogyavardhani Vati (For Liver Patient).png" alt="Aarogyavardhani Vati">
+                <h3>Aarogyavardhani Vati</h3>
+                <p>It boosts power of Liver.</p>
+                <div class="price">$10</div>
+                <button>Add to Cart</button>
+                <div class="like-btn">❤️ Like</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Ayurveda Mentor. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function searchProducts() {
+            const query = document.getElementById('search-query').value.toLowerCase();
+    
+            // Mapping search queries to product section IDs
+            const productMapping = {
+                'ashwagandha': '#ashwagandha',
+                'honey': '#raw-honey',
+                'chyawanprash': '#chyawanprash',
+                'herbal tea': '#herbal-tea',
+                'aarogyavardhani-vati': '#aarogyavardhani-vati'
+            };
+    
+            // If product is found, scroll to the product section
+            if (productMapping[query]) {
+                window.location.href = productMapping[query];
+            } else {
+                alert('Product not found. Please try another search.');
+            }
+    
+            // Clear the search field
+            document.getElementById('search-query').value = '';
+        }
+
+        // Function to add the product in cart
+        const cart = JSON.parse(localStorage.getItem('cart')) || []; // Retrieve cart from localStorage or initialize if empty
+
+        // Function to add items to the cart
+        function addToCart(productId, productName, productPrice) {
+            // Check if item is already in the cart
+            const existingItem = cart.find(item => item.id === productId);
+            if (existingItem) {
+                alert(productName + " is already in the cart.");
+            } else {
+                // Add new item to cart
+                cart.push({ id: productId, name: productName, price: productPrice });
+                localStorage.setItem('cart', JSON.stringify(cart)); // Save cart to localStorage
+                alert(productName + " has been added to the cart.");
+
+                // Redirect to the product-buy.html page
+                window.location.href = './product-buy.html'; // Change this to the actual path of your product-buy page
+            }
+        }
+
+        // Add event listeners to "Add to Cart" buttons
+        document.querySelectorAll('.medicine-card button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const productCard = e.target.closest('.medicine-card');
+                const productId = productCard.id;
+                const productName = productCard.querySelector('h3').textContent;
+                const productPrice = 29.99; // Example price, you can set different prices
+                addToCart(productId, productName, productPrice);
+            });
+        });
+    </script>
+</body>
+</html>
